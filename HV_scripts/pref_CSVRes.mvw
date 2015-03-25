@@ -1,0 +1,13 @@
+*Id("HyperWorks v10.0")
+
+*BeginDefaults()
+{ mypath = tcleval("file normalize [file dirname [ info script ]]") }
+
+    // hw application preferences
+	*BeginGraphicDefaults()
+	    *BeginMenu(dummy, "&スクリプト")
+	      *MenuItem(util, "Query All", TCL, { mypath + "/QueryAll/TopLevelMain.tbc"})
+	      *MenuItem(util, "モーメントダイアグラム", TCL, { mypath + "/MomentDiagramVisualizer_Japanese.tcl"})
+	    *EndMenu()
+	*EndGraphicDefaults()
+*EndDefaults()

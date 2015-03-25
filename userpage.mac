@@ -1,0 +1,46 @@
+// HWVERSION_9.0_Dec 19 2008
+////////////////////////////////////////////////////////////////////////////////
+// Filename: userpage.mac
+// Purpose:  Macro menu user page definitions.
+// Altair Copyright:
+////////////////////////////////////////////////////////////////////////////////
+*createbutton(5, "SplitQuad",  0, 0, 10, BUTTON, "シェル要素パターン分割", "ExecTcl", "MACRO_TOOLS\SplidQuad\SplitScriptV6_Japanese.tcl", "")
+
+*createbutton(5, "Rectangle Beamsec",  0, 0, 10, BUTTON, "I1, I2 から長方形断面作成", "ExecTcl", "MACRO_TOOLS\MAIN\Nonsection2Squaresection.tcl", "")
+*createbutton(5, "Bar Elem Coord", 0, 0, 10, BUTTON, "はり要素座標系の表示＆修正", "ExecTcl", "MACRO_TOOLS/MAIN/Coord_Cntrl/bar_elem_coordinate.tcl", "")
+*createbutton(5, "Shell Elem System",  0, 0, 10, BUTTON, "Shell Elem System", "ExecTcl", "MACRO_TOOLS/MAIN/Coord_Cntrl/shell_elem_coordinate.tcl", "")
+*createbutton(5, "Node/Elem coordinate",  0, 0, 10, BUTTON, "節点/要素の座標を局所座標系での表示と出力", "ExecTcl", "MACRO_TOOLS/MAIN/DisplayEntityCoord.tcl", "")
+*createbutton(5, "Linear Gap", 0, 0, 10, BUTTON, "Nastran Linear Gap", "ExecTcl", "MACRO_TOOLS/MAIN/GapCreation.tcl", "")
+*createbutton(5, "Mesh Refine", 0, 0, 10, BUTTON, "Mesh Refine", "ExecTcl", "MACRO_TOOLS/MAIN/refine_demo.tcl", "")
+*createbutton(5, "Multi Copy", 0, 0, 10, BUTTON, "Multi Copy", "ExecTcl", "MACRO_TOOLS/MAIN/OreCopy.tcl", "")
+*createbutton(5, "Multi Copy Rotate", 0, 0, 10, BUTTON, "複数回転＆コピー", "ExecTcl", "MACRO_TOOLS/MAIN/OreCopyRotate.tcl", "")
+*createbutton(5, "Auto Beam", 0, 0, 10, BUTTON, "Make beam elems from solid", "ExecTcl", "MACRO_TOOLS/beam/TopLevel.tcl", "")
+*createbutton(5, "Hexa Elem Coord", 0, 0, 10, BUTTON, "ヘキサの節点を並び替えて要素座標系を変更", "ExecTcl", "MACRO_TOOLS/MAIN/NarabikaeSolid.tcl", "")
+*createtext(5, "Utilities: ", 0, 0)
+
+*createbutton(5, "Renum elem",  0, 0, 10, BUTTON, "Renumbering for element ID.", ExecTcl, "MACRO_TOOLS/MAIN/renum_enty/renum_elem2.tcl", "")
+*createbutton(5, "Renum node", 0, 0, 10, BUTTON, "Renumbering for node ID.", ExecTcl, "MACRO_TOOLS//MAIN/renum_enty/renum_node2.tcl", "")
+*createbutton(5, "Coord Renumber", 0, 0, 10, BUTTON, "Renumbering by coordinate.", ExecTcl, "MACRO_TOOLS/MAIN/MHICAE_RENUMBER.tcl", "::_MHICAE::RENUMBER::MainWindow")
+*createbutton(5, "3-Axis Renumber", 0, 0, 10, BUTTON, "３軸の座標値を使ってのリナンバ", ExecTcl, "MACRO_TOOLS/renumber_3axis/RenumberExec.tcl", "")
+*createtext(5, "Renumber: ", 0, 0)
+
+*createbutton(5, "Export Bulk",  0, 0, 10, BUTTON, "Export nastran bulk data", "ExecTcl", "MACRO_TOOLS/MAIN/renum_enty/File.tcl", "::File_Tool::Export")
+*createbutton(5, "Import Bulk", 0, 0, 10, BUTTON, "Import nastran bulk data", "ExecTcl", "MACRO_TOOLS/MAIN/renum_enty/File.tcl", "::File_Tool::Import")
+*createtext(5, "IO:", 0, 0)
+
+// 3.0.0 にて廃止
+//createbutton(5, "Display I1 & I2",  0, 0, 10, BUTTON, "Display I1 & I2", "ExecTcl", "MACRO_TOOLS/MAIN/renum_enty/I1I2_Review.tcl", "")
+
+// obsolute from 1.5.1
+//createbutton(5, "Set Refr System",  0, 0, 10, BUTTON, "Export node coordinate of an assigned system", "ExecTcl", "MACRO_TOOLS/MAIN/renum_enty/RENUMBER_ENTITY.tcl", "::_RENUMB_ENTITY::Get_Refer_Node_Coord")
+
+
+////////////////////////////////////////////////////////////////////////////////
+*beginmacro("ExecTcl")
+	*evaltclscript($1, 0)
+	*evaltclstring($2, 0)
+*endmacro()
+
+
+
+
