@@ -21,7 +21,7 @@
 *createbutton(5, "Renum elem",  0, 0, 10, BUTTON, "Renumbering for element ID.", ExecTcl, "MACRO_TOOLS/MAIN/renum_enty/renum_elem2.tcl", "")
 *createbutton(5, "Renum node", 0, 0, 10, BUTTON, "Renumbering for node ID.", ExecTcl, "MACRO_TOOLS//MAIN/renum_enty/renum_node2.tcl", "")
 *createbutton(5, "Coord Renumber", 0, 0, 10, BUTTON, "Renumbering by coordinate.", ExecTcl, "MACRO_TOOLS/MAIN/MHICAE_RENUMBER.tcl", "::_MHICAE::RENUMBER::MainWindow")
-*createbutton(5, "3-Axis Renumber", 0, 0, 10, BUTTON, "３軸の座標値を使ってのリナンバ", ExecTcl, "MACRO_TOOLS/renumber_3axis/RenumberExec.tcl", "")
+*createbutton(5, "3-Axis Renumber", 0, 0, 10, BUTTON, "３軸の座標値を使ってのリナンバ", ExecTcl, "MACRO_TOOLS/renumber_3axis/RenumberExec_new.tbc", "")
 *createtext(5, "Renumber: ", 0, 0)
 
 *createbutton(5, "Export Bulk",  0, 0, 10, BUTTON, "Export nastran bulk data", "ExecTcl", "MACRO_TOOLS/MAIN/renum_enty/File.tcl", "::File_Tool::Export")
