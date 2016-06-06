@@ -1,3 +1,4 @@
+
 if {[catch {package require tbcload 1.6} err] == 1} {
     return -code error "[info script]: The TclPro ByteCode Loader is not available or does not support the correct version -- $err"
 }
