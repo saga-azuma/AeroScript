@@ -1,0 +1,204 @@
+##
+# \file matrix.tcl
+# Matrix operations.
+# The package ajlib::matrix is provided here.
+#
+# $Revision: 124 $
+# $Id: matrix.tcl 124 2013-11-20 11:18:41Z oguchi $
+# TclPro::Compiler::Include
+
+if {[catch {package require tbcload 1.6} err] == 1} {
+    return -code error "[info script]: The TclPro ByteCode Loader is not available or does not support the correct version -- $err"
+}
+tbcload::bceval {
+TclPro ByteCode 2 0 1.7 8.5
+4 0 44 16 0 0 44 0 4 4 4 -1 -1
+44
+w0E<!(H&s!/HW<!7Ki<!5/Ypv8blf%4;tl#62o9v1oJ=!<&|=!9KE!!
+4
+B=xOw
+4
+L4@4w
+16
+x
+9
+njkSAt=sp@1v
+x
+4
+uKhgC
+x
+15
+a.01C>fua3I#BCFu3i-
+x
+241
+6dV<+<cp6wLdV<+&|.cD83=JD.JqcB7APQB!3x;@-T#-Ek%#D+:V#D+0<o(F0KhgC(-B3@6C
+QC+,:cSAq^>r@5+dfD*ueCF%m.lB/#V<+O!r<+*LmID1@NBD!M|RA;bl(F.'U;@*fYKA1-A6
+B8+dfD)v#D++oG)Fqc/bE*+G<F#dZRA>P0bE>`9:+JS)!F:xG<FgniQA)jI9>:qP-EO5>F+K
+TK!.w3o=+0VE5.<P+p>;H8:+E&LBDs2K(Ff.fRA3;B,EBXVE+a.01C>fua3I#BCFZ@>d3AHm
+IDpsfq@P9<v4+!
+x
+4
+,CHr@
+x
+34
+a.01C>fua3I#BCFZ@>d3'sdCFcE?<@26sJDa_bcEX7%
+x
+36
+#-V5B-Vi|D%d/bE>nB3@A7ME+br<3IQoG<FJkeK/e@PF+
+p
+5 0 66 6 0 1 24 0 7 5 5 -1 -1
+66
+PSn-!D|.6,OkYc/,|&v!LO_w!QE=A!6D13w625pvH5v!!DDaW!7oyX!8rn9vD!!!!7?W<!1N
+E<!4#5pv#!!
+5
+Gdrg%0!
+5
+'u64w-!
+6
+x
+22
+8qky3'sdCFcE?<@26sJDa_bcEX7%
+x
+22
+:vuy3'sdCFcE?<@26sJDa_bcEX7%
+x
+22
+<()|3'sdCFcE?<@26sJDa_bcEX7%
+x
+5
+0lTfD>v
+x
+13
+>QsJD5(3cE(%DE+H!
+x
+23
+kL*!F0ZsiCmcZRAj8o=+eSg|D=gP&
+0
+1
+J
+3
+36
+1
+U!
+10
+1
+S!
+21
+1
+T!
+4 4
+5
+oWIhC1v
+0 0 256
+5
+vhoRA>v
+1 0 256
+4
+-lo(F
+2 1 256
+x
+0
+
+3
+qRQ,
+3 1 256
+x
+2
+*`v
+x
+24
+a.01C>fua3I#BCFZ@>d34lB&G'mMTA
+x
+19
+/#BCF@U%F+K+dfDaMFe04yHw
+p
+11 0 131 11 0 1 48 0 6 11 11 -1 -1
+131
+,|&v!<JGY!8^w!!2T!!!w3E<!3W8X!LGe`BEfIQ,v*<<!:)#t!5kH>!1;L3w2AU3w/o+UvPr
+%p+/cSs!5v!!!c!!!!R<elGzD!!!!_Sp3w2&#pvG5v!!O4ZQ#6fA=!MR_w!:ek>!>D13wN,J
+6,,/LNw6&'v!)'!!
+11
+3Sgm#d8qb'HABv
+11
+H+hqvK(TX#7|W!
+11
+x
+8
+bkTKDwBgAG
+x
+11
+bkTKD_x;iCrXc,
+x
+5
+0lTfD>v
+x
+14
+>QsJDv-R;@?2MyGhAv
+x
+4
+We:U/
+x
+26
+ek1'DIxVE+j,B3@FID`F%S#D+,`bcEX7%
+x
+0
+
+x
+12
+8qky34lB&G'mMTA
+x
+12
+:vuy34lB&G'mMTA
+x
+12
+<()|34lB&G'mMTA
+x
+41
+l'uSAEl)b34lB&G'mMTA9VidCrZmID8>d#HT_pN:up,<@26sJD?v
+0
+1
+J
+3
+36
+1
+U!
+10
+1
+S!
+23
+1
+T!
+2 4
+6
+,`bcEX7%
+0 0 256
+3
+qRQ,
+1 1 256
+x
+2
+*`v
+3
+%@`-
+2 0 0
+6
++uk_FRnw
+3 0 0
+x
+7
+ld^LCOef+
+x
+7
+?DM&GTyf+
+x
+13
+mN%lBe^s)D(<ylBDv
+x
+3
+y#-&
+x
+15
+rpwhC;Z2b3<?<+EfqT+
+0
+0
+}

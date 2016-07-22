@@ -4,6 +4,7 @@
 // Purpose:  Macro menu user page definitions.
 // Altair Copyright:
 ////////////////////////////////////////////////////////////////////////////////
+*createbutton(5, "Screen Axis Rotate",  0, 0, 10, BUTTON, "軸周りの画面回転", "ExecTcl", "MACRO_TOOLS\ViewRotationAlongAxis\ViewRotationAlongAxis_esg.tcl", "")
 *createbutton(5, "SplitQuad",  0, 0, 10, BUTTON, "シェル要素パターン分割", "ExecTcl", "MACRO_TOOLS\SplidQuad\SplitScriptV6_Japanese.tcl", "")
 
 *createbutton(5, "Rectangle Beamsec",  0, 0, 10, BUTTON, "I1, I2 から長方形断面作成", "ExecTcl", "MACRO_TOOLS\MAIN\Nonsection2Squaresection.tcl", "")

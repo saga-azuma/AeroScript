@@ -1,0 +1,200 @@
+##
+# \file 2x2.tcl
+# 2-by-2 matrices operations.
+#
+# $Revision: 105 $
+# $Id: 2x2.tcl 105 2013-11-17 12:07:59Z oguchi $
+# TclPro::Compiler::Include
+
+if {[catch {package require tbcload 1.6} err] == 1} {
+    return -code error "[info script]: The TclPro ByteCode Loader is not available or does not support the correct version -- $err"
+}
+tbcload::bceval {
+TclPro ByteCode 2 0 1.7 8.5
+3 0 33 12 0 0 32 0 4 3 3 -1 -1
+33
+w0E<!(H&s!/HW<!3Ki<!5/Ypv4>UNw4;tl#62o9vz
+3
+7/0v
+3
+A)'v
+12
+x
+9
+njkSAt=sp@1v
+x
+4
+uKhgC
+x
+20
+a.01C>fua3I#BCFZ@>d38Qb31
+x
+0
+
+x
+4
+,CHr@
+x
+39
+a.01C>fua3I#BCFZ@>d38Qb31BdeOA!'kDF%<XeD|m@CFu3i-
+x
+7
+#-V5BhiGw
+p
+13 0 142 9 0 0 52 0 3 13 13 -1 -1
+142
+,|&v!%C6O&9N2,!38ov!w6N<!2unov!xIY!8^w!!:l!!!%<`W!5v!!!-!!!!m2MQ5OGe`B<j
+TZ)v*<<!9N2,!/uJv!,,:3w_-sZ2OGe`B:Xs#)v*<<!;T2,!-i8v!,,:3w%!+u!8^w!!:l!!
+!)`vpv5v!!!-!!!!m2MQ5<EW<!75bpv#!!
+13
+4Ypm#PU*PwWU*Pw0!
+13
+L=78#qlGN%mNTlw'!
+9
+x
+18
+J;&c3I#BCF)QTKDyYcl@Y(%
+x
+18
+J;&c3I#BCF)QTKDl?l#FNnw
+x
+3
+Xr,&
+x
+3
+Y#6&
+d
+-1.0
+x
+3
+Yr,&
+x
+3
+Z#6&
+x
+43
+a.01C>fua3I#BCFZ@>d3AHmIDpsfq@MQtPA,1HSA`Vj^EyP=^En!r-
+x
+1
+.v
+0
+0
+1 4
+5
+oWIhC1v
+0 0 256
+3
+g'<-
+1 0 0
+3
+lLc,
+2 0 0
+1
+.v
+3 0 0
+x
+29
+a.01C>fua3I#BCFZ@>d38Qb31MllFD8ik)F1v
+x
+19
+/#BCF@U%F+K+dfDaMFe04yHw
+p
+18 0 253 22 0 0 72 0 4 18 18 -1 -1
+253
+-**!!GaDbB/JHK%v*<<!@xyI&ISa<!*K&s!0KA9vAGe`BD|.6,#3WW!.lvpv9o=6#i)1B!:c
+W<!qKjZ2J-VQ5KDe`BEfIQ,v*<<!88|X!4lA=!2Sw>!CqH4w6JtUvNr%p++K/s!5v!!!>!!!
+!=S+aB1y)-&v*<<!8;>6#'+6K'<N2,!>%)w!#0E<!=^w!!1Q!!!2ylf%:M>t!s;Bs!5v!!!>
+!!!!@eFaB1y)-&v*<<!<Stl#'+6K'<N2,!>%)w!#0E<!<^w!!1Q!!!4nMH&8G>t!s;Bs!H^/
+*'>>9X!5v!!!/!!!!BRE5wd^Us!z
+18
+DOmn#j/QJ&|H5+'|H5+')3!
+18
+!rFR,3>jX*(A9Y*v`@_(5K!
+22
+i
+0
+x
+24
+a.01C>fua3I#BCFZ@>d3VD=iCmDTfD
+x
+0
+
+x
+40
+a.01C>fua3I#BCFZ@>d3AHmIDpsfq@HQQaD3E0bEE_T#66`t!H
+x
+1
+-v
+x
+21
+J;&c3I#BCF)QTKD|b)3A*OqgC1v
+x
+3
+Xr,&
+x
+3
+Z#6&
+x
+3
+Y#6&
+x
+3
+Yr,&
+x
+18
+J;&c3I#BCF)QTKDZG-6@L(%
+x
+5
+0lTfD>v
+x
+17
+innC+oKVTA.s<JD0LVE+H!
+x
+41
+m^`WFjgpgC5+dfDrfggCr'L;@:.G<F#upcB3E0bE2D3'D(<ylBDv
+i
+1
+i
+-1
+i
+-1
+i
+1
+x
+42
+a.01C>fua3I#BCFZ@>d3AHmIDpsfq@XnOyF1Es+EmdZsGPgggCJ%%
+x
+43
+a.01C>fua3I#BCFZ@>d3AHmIDpsfq@MQtPA,1HSA`Vj^EyP=^En!r-
+x
+1
+.v
+d
+1.0
+0
+0
+2 5
+6
+,`bcEX7%
+0 0 256
+3
+qRQ,
+1 1 256
+x
+2
+*`v
+3
+_dD-
+2 0 0
+1
+-v
+3 0 0
+1
+.v
+4 0 0
+x
+15
+rpwhC;Z2b3<?<+EfqT+
+0
+0
+}
