@@ -1,11 +1,12 @@
 ############################################################
 # Copyright (c) 2016 Altair Engineering Japan.  All Rights #
 ############################################################
-### Create Dimensions Version 4 ###
+### Create Dimensions Version 5 ###
 ### Ver1 Create Dimensions for Distance, Length, Radius ###
 ### Ver2 change the direction mean of Distance. ###
 ### Ver3 add the 2 vector angle and 3 node angle. ###
 ### Ver4 add the Remove latest and delete PLOTEL with tags feature ###
+### Ver5 Show/Hide PLOTEL with tags, Show the path for Length ###
 ############################################################
 
 ############################################################
@@ -15,7 +16,7 @@ proc ::DimensionCompSettings {args} {
 	if {[hm_entityinfo exist comps $compname] == 1} {
 		*currentcollector components $compname;
 	} else {
-		*collectorcreateonly components $compname "" 6;
+		*collectorcreateonly components $compname "" 5;
 	}
 }
 
@@ -52,7 +53,7 @@ proc ::Distance2nodes {args} {
 
 		# Create Tags #
 		set tagname [::hwat::utils::GetUniqueName tags "Dis=$dis1"];
-		*tagcreate elements $plotid $tagname "Node$n1a\,$n2a" 4;
+		*tagcreate elements $plotid $tagname "Node$n1a\,$n2a" 5;
 
 		# For Remove #
 		*createmark tags 1 [hm_latestentityid tags];
@@ -115,7 +116,10 @@ proc ::LengthOfNodes {args} {
 		eval *createnode [hm_getvalue nodes id=$n2a dataname=coordinates] 0 0 0;
 		set n2b [hm_latestentityid nodes];
 
-		# Create PLOTEL #
+		# Start elem recorder #
+		hm_entityrecorder elems on;
+
+		# Create Lead line PLOTEL #
 		*createlist nodes 1 $n1a $n1b;
 		*createelement 2 1 1 1;
 		*createlist nodes 1 $n2a $n2b;
@@ -123,15 +127,22 @@ proc ::LengthOfNodes {args} {
 		*createlist nodes 1 $n1b $n2b;
 		*createelement 2 1 1 1;
 		set plotid [hm_latestentityid elems];
+		# Create path PLOTEL #
+		eval *createlist nodes 1 $nodelist;
+		*createelement 2 1 1 1;
+
+		# End elem recorder #
+		hm_entityrecorder elems off;
+		set plotellist [hm_entityrecorder elems ids];
 
 		# Create Tags #
 		set tagname [::hwat::utils::GetUniqueName tags "Length=$dis1"];
-		*tagcreate elements $plotid $tagname "Node$n1a\,$n2a" 4;
+		*tagcreate elements $plotid $tagname "Node$n1a\,$n2a" 5;
 
 		# For Remove #
 		*createmark tags 1 [hm_latestentityid tags];
-		*createarray 3 [hm_latestentityid elems 0] [hm_latestentityid elems 1] [hm_latestentityid elems 2];
-		*metadatamarkintarray tags 1 "RelatedElementsWithTag" 1 3;
+		eval *createarray [llength $plotellist] $plotellist;
+		*metadatamarkintarray tags 1 "RelatedElementsWithTag" 1 [llength $plotellist];
 
 		# Translate nodes #
 		*createmark nodes 1 $n1b $n2b;
@@ -170,7 +181,7 @@ proc ::Radius3nodes {args} {
 
 		# Create Tags #
 		set tagname [::hwat::utils::GetUniqueName tags "R=$R"];
-		*tagcreate elements $plotid $tagname "Node$n1\,$n2\,$n3" 4;
+		*tagcreate elements $plotid $tagname "Node$n1\,$n2\,$n3" 5;
 
 		# For Remove #
 		*createmark tags 1 [hm_latestentityid tags];
@@ -242,7 +253,7 @@ proc ::Vector2angle {args} {
 
 		# Create Tags for node #
 		set tagname [::hwat::utils::GetUniqueName tags "VectorAngle=$angle"];
-		*tagcreate nodes $intersect $tagname "" 4;
+		*tagcreate nodes $intersect $tagname "" 5;
 
 		# For Remove #
 		*createmark tags 1 [hm_latestentityid tags];
@@ -283,7 +294,7 @@ proc ::Vector2angle {args} {
 
 		# Create Tags for node #
 		set tagname [::hwat::utils::GetUniqueName tags "VectorAngle=$angle"];
-		*tagcreate nodes $intersect $tagname "" 4;
+		*tagcreate nodes $intersect $tagname "" 5;
 
 		# For Remove #
 		*createmark tags 1 [hm_latestentityid tags];
@@ -318,7 +329,7 @@ proc ::3NodeAngle {args} {
 
 		# Create Tags #
 		set tagname [::hwat::utils::GetUniqueName tags "3NodeAngle=$angle"];
-		*tagcreate nodes $n2 $tagname "Node$n1\,$n2\,$n3" 4;
+		*tagcreate nodes $n2 $tagname "Node$n1\,$n2\,$n3" 5;
 
 		# For Remove #
 		*createmark tags 1 [hm_latestentityid tags];
@@ -372,6 +383,23 @@ proc ::RemoveLatest {args} {
 		tk_messageBox -message "There is no tags";
 	}
 }
+
+############################################################
+######## Show/Hide PLOTEL with tag ########
+proc ::ShowHidePlotelWithTag {args} {
+	set mark [lindex [split [lindex [split $args (] end] ,] 0];
+	if {[hm_marklength tags $mark] != 0} {
+		set taglist [hm_getmark tags $mark];
+		foreach meta [hm_metadata findbyname "RelatedElementsWithTag"] {
+			lassign $meta t tagid dataname datatype elemlist;
+			if {$dataname == "RelatedElementsWithTag" && [lsearch $taglist $tagid] != "-1"} {
+				hm_appendmark elems $mark $elemlist;
+			}
+		}
+	}
+}
+::hwt::AddCallback *hideentitybymark ::ShowHidePlotelWithTag before;
+::hwt::AddCallback *showentitybymark ::ShowHidePlotelWithTag before;
 
 ############################################################
 ######## Pulldown menu ########
