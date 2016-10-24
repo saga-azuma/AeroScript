@@ -7,6 +7,7 @@
 ### Ver3 add the 2 vector angle and 3 node angle. ###
 ### Ver4 add the Remove latest and delete PLOTEL with tags feature ###
 ### Ver5 Show/Hide PLOTEL with tags, Show the path for Length ###
+### Ver6 Improvement for robustness / prepare for renumber issue ###
 ############################################################
 
 ############################################################
@@ -351,7 +352,15 @@ proc ::RemovePlotelWithTag {args} {
 		foreach meta [hm_metadata findbyname "RelatedElementsWithTag"] {
 			lassign $meta t tagid dataname datatype elemlist;
 			if {$dataname == "RelatedElementsWithTag" && [lsearch $taglist $tagid] != "-1"} {
-				eval *createmark elems 1 $elemlist;
+				set elemlist2 "";
+				foreach eid $elemlist {
+					if {[hm_entityinfo exist elems $eid] == "1"} {
+						if {[hm_getvalue elems id=$eid dataname=config] == "2"} {
+							lappend elemlist2 $eid;
+						}
+					}
+				}
+				eval *createmark elems 1 $elemlist2;
 				if {[hm_marklength elems 1] >= 1} {
 					::hwt::DisableCallbacks;
 					*deletemark elems 1;
